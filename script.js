@@ -56,10 +56,14 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
+
+/* ignore for now
 function game() {
     let answers = [];
     for (let i = 0; i < 5; i++) {
         answers.push(playRound(prompt("Please, put your bet here"), getComputerChoice()));
     }
     return console.log(answers);
-}
+} 
+
+*/
