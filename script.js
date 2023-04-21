@@ -25,16 +25,41 @@ function getComputerChoice() {
 
     for (let i = 0; i < info.length; i++) {
         if (info[i].id === randomNumber) {
-            return info[i].name;
+            return info[i].name.toLowerCase();
         }
     }
-    
-}
-
-
-function playRound() {
-
-
 
 }
 
+
+function playRound(playerSelection, computerSelection) {
+
+    let playerInput = playerSelection.toLowerCase();
+
+    if (playerInput === computerSelection) {
+        console.log("We have a draw!");
+    } else if (playerInput === info[0].name.toLowerCase() && computerSelection === info[2].name.toLowerCase()) {
+        console.log("You win! Congratulations");
+    } else if (playerInput === info[0].name.toLowerCase() && computerSelection === info[1].name.toLowerCase()) {
+        console.log("Computer's win!");
+    } else if (playerInput === info[1].name.toLowerCase() && computerSelection === info[0].name.toLowerCase()) {
+        console.log("You win! Congratulations");
+    } else if (playerInput === info[1].name.toLowerCase() && computerSelection === info[2].name.toLowerCase()) {
+        console.log("Computer's win!");
+    } else if (playerInput === info[2].name.toLowerCase() && computerSelection === info[1].name.toLowerCase()) {
+        console.log("You win! Congratulations");
+    } else if (playerInput === info[2].name.toLowerCase() && computerSelection === info[0].name.toLowerCase()) {
+        console.log("Computer's win!");
+    } else {
+        console.error("The input isn't compatible");
+    }
+
+}
+
+function game() {
+    let answers = [];
+    for (let i = 0; i < 5; i++) {
+        answers.push(playRound(prompt("Please, put your bet here"), getComputerChoice()));
+    }
+    return console.log(answers);
+}
