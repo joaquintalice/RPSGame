@@ -11,6 +11,7 @@ Scissors beat paper, but loses to rock.
 Paper beats rock, but loses to scissors.
 */
 
+// HTML connections
 const btn1 = document.querySelector(".btn1"); // rock
 const btn2 = document.querySelector(".btn2"); // paper
 const btn3 = document.querySelector(".btn3"); // scissor
@@ -32,6 +33,7 @@ let info = [
 
 function getComputerChoice() {
 
+    // Generate random number between 1 and 3
     let randomNumber = Math.floor(Math.random() * 3) + 1;
 
     for (let i = 0; i < info.length; i++) {
@@ -152,17 +154,38 @@ function winnerOfRps() {
 
     if (scoreP.length === 5) {
 
+        let restart = document.createElement("button");
+        restart.textContent = "Play again!";
+        document.getElementById("main").appendChild(restart);
+        
+        btn1.disabled = true;
+        btn2.disabled = true;
+        btn3.disabled = true;
+
         for (let i = 0; i < 5; i++) {
             sumaC = sumaC + scoreC[i];
             sumaP = sumaP + scoreP[i];
         }
 
         if (sumaC === sumaP) {
-            winner.textContent = `We have a draw, with ${sumaC} points`;
+            winner.textContent = `We have a draw, with ${sumaC}-${sumaP} points`;
         } else if (sumaC > sumaP) {
             winner.textContent = `Computer win the game, with ${sumaC} points`;
         } else if (sumaP > sumaC) {
             winner.textContent = `You win the game, with ${sumaP} points`;
+        }
+
+        restart.onclick = () => {
+            scoreP.length = 0;
+            scoreC.length = 0;
+            computerScore.textContent = scoreC;
+            playerScore.textContent = scoreP;
+            result.textContent = "Good luck!";
+            winner.textContent = "";
+            btn1.disabled = false;
+            btn2.disabled = false;
+            btn3.disabled = false;
+            restart.remove();
         }
 
     }
