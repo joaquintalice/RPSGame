@@ -1,6 +1,6 @@
 body {
     margin: 0px;
-    background-image: url("/assets/protruding-squares.svg");
+    background-image: url("assets/protruding-squares.svg");
 }
 
 
@@ -55,7 +55,7 @@ body {
 }
 
 .btn1 {
-    background-image: url("/assets/rock__1_-removebg-preview.png");
+    background-image: url("assets/rock__1_-removebg-preview.png");
     width: 22rem;
     height: 22rem;
     background-size: 19rem;
@@ -67,7 +67,7 @@ body {
 }
 
 .btn2 {
-    background-image: url("/assets/paper__1_-removebg-preview.png");
+    background-image: url("assets/paper__1_-removebg-preview.png");
     width: 22rem;
     height: 22rem;
     background-size: 17rem;
@@ -79,7 +79,7 @@ body {
 }
 
 .btn3 {
-    background-image: url("/assets/scissor_1_-removebg-preview.png");
+    background-image: url("assets/scissor_1_-removebg-preview.png");
     width: 22rem;
     height: 22rem;
     background-size: 17rem;
@@ -217,7 +217,7 @@ body {
 
 
     .btn1 {
-        background-image: url("/assets/rock__1_-removebg-preview.png");
+        background-image: url("assets/rock__1_-removebg-preview.png");
         width: 17rem;
         height: 17rem;
         background-size: 12rem;
@@ -229,7 +229,7 @@ body {
     }
     
     .btn2 {
-        background-image: url("/assets/paper__1_-removebg-preview.png");
+        background-image: url("assets/paper__1_-removebg-preview.png");
         width: 17rem;
         height: 17rem;
         background-size: 11rem;
@@ -241,7 +241,7 @@ body {
     }
     
     .btn3 {
-        background-image: url("/assets/scissor_1_-removebg-preview.png");
+        background-image: url("assets/scissor_1_-removebg-preview.png");
         width: 17rem;
         height: 17rem;
         background-size: 11rem;
@@ -300,7 +300,7 @@ body {
 
 
     .btn1 {
-        background-image: url("/assets/rock__1_-removebg-preview.png");
+        background-image: url("assets/rock__1_-removebg-preview.png");
         width: 12rem;
         height: 12rem;
         background-size: 8rem;
@@ -312,7 +312,7 @@ body {
     }
     
     .btn2 {
-        background-image: url("/assets/paper__1_-removebg-preview.png");
+        background-image: url("assets/paper__1_-removebg-preview.png");
         width: 12rem;
         height: 12rem;
         background-size: 7rem;
@@ -324,7 +324,7 @@ body {
     }
     
     .btn3 {
-        background-image: url("/assets/scissor_1_-removebg-preview.png");
+        background-image: url("assets/scissor_1_-removebg-preview.png");
         width: 12rem;
         height: 12rem;
         background-size: 7rem;
@@ -382,7 +382,7 @@ body {
     }
 
     .btn1 {
-        background-image: url("/assets/rock__1_-removebg-preview.png");
+        background-image: url("assets/rock__1_-removebg-preview.png");
         width: 7rem;
         height: 7rem;
         background-size: 6rem;
@@ -394,7 +394,7 @@ body {
     }
     
     .btn2 {
-        background-image: url("/assets/paper__1_-removebg-preview.png");
+        background-image: url("assets/paper__1_-removebg-preview.png");
         width: 7rem;
         height: 7rem;
         background-size: 5rem;
@@ -406,7 +406,7 @@ body {
     }
     
     .btn3 {
-        background-image: url("/assets/scissor_1_-removebg-preview.png");
+        background-image: url("assets/scissor_1_-removebg-preview.png");
         width: 7rem;
         height: 7rem;
         background-size: 5rem;
@@ -482,7 +482,7 @@ body {
     }
 
     .btn1 {
-        background-image: url("/assets/rock__1_-removebg-preview.png");
+        background-image: url("assets/rock__1_-removebg-preview.png");
         width: 6rem;
         height: 6rem;
         background-size: 5rem;
@@ -494,7 +494,7 @@ body {
     }
     
     .btn2 {
-        background-image: url("/assets/paper__1_-removebg-preview.png");
+        background-image: url("assets/paper__1_-removebg-preview.png");
         width: 6rem;
         height: 6rem;
         background-size: 5rem;
@@ -506,7 +506,7 @@ body {
     }
     
     .btn3 {
-        background-image: url("/assets/scissor_1_-removebg-preview.png");
+        background-image: url("assets/scissor_1_-removebg-preview.png");
         width: 6rem;
         height: 6rem;
         background-size: 5rem;
