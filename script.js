@@ -71,8 +71,8 @@ function rock() {
         scoreC.push(1);
         scoreP.push(0);
     }
-    computerScore.textContent = scoreC;
-    playerScore.textContent = scoreP;
+    computerScore.textContent = scoreC.join(", ");
+    playerScore.textContent = scoreP.join(", ");
     winnerOfRps();
 }
 
@@ -101,8 +101,8 @@ function paper() {
         scoreC.push(1);
         scoreP.push(0);
     }
-    computerScore.textContent = scoreC;
-    playerScore.textContent = scoreP;
+    computerScore.textContent = scoreC.join(", ");
+    playerScore.textContent = scoreP.join(", ");
     winnerOfRps();
 }
 
@@ -134,8 +134,8 @@ function scissor() {
         scoreC.push(1);
         scoreP.push(0);
     }
-    computerScore.textContent = scoreC;
-    playerScore.textContent = scoreP;
+    computerScore.textContent = scoreC.join(", ");
+    playerScore.textContent = scoreP.join(", ");
     winnerOfRps();
 }
 
@@ -156,7 +156,9 @@ function winnerOfRps() {
 
         let restart = document.createElement("button");
         restart.textContent = "Play again!";
-        document.getElementById("main").appendChild(restart);
+        document.getElementById("restart-btn").appendChild(restart);
+        restart.classList.add("restart-button");
+        restart.classList.add("float");
         
         btn1.disabled = true;
         btn2.disabled = true;
@@ -178,10 +180,10 @@ function winnerOfRps() {
         restart.onclick = () => {
             scoreP.length = 0;
             scoreC.length = 0;
-            computerScore.textContent = scoreC;
-            playerScore.textContent = scoreP;
+            computerScore.textContent = "-";
+            playerScore.textContent = "-";
             result.textContent = "Good luck!";
-            winner.textContent = "";
+            winner.textContent = "-";
             btn1.disabled = false;
             btn2.disabled = false;
             btn3.disabled = false;
