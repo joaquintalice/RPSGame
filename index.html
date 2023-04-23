@@ -11,15 +11,40 @@
     
     <div class="main" >
 
-        <label>Let's play!</label>
-        <button class="btn1">Rock</button>
-        <button class="btn2">Paper</button>
-        <button class="btn3">Scissor</button>
+        <div class="header">
+            <h1 class="title"> Rock & Paper & Scissor </h1>
+            <h1 class="logo">Made by: <span>Joaquin Talice</span><a href="https://github.com/joaquintalice" target="_blank"><img class="github-logo" src="/assets/github.png"></a></h1>
+        </div>
+        <div class="button-container">
+            <button class="btn1 float"></button>
+            <button class="btn2 float"></button>
+            <button class="btn3 float"></button>
+        </div>
         <div id="main">
-            <p class="result">Result: </p>
-            <p class="playerScore">Player score: </p>
-            <p class="computerScore">Comptuer score: </p>
-            <p class="winner">Winner (best of 5): </p>
+            <div class="result-container">
+                <h2>Result: </h2>
+                <p class="result">-</p>
+            </div>
+
+            <div class="player-score-container">
+                <h2>Your score history: </h2>
+                <p class="playerScore">-</p>
+            </div>
+
+            <div class="computer-score-container">
+                <h2>Computer score history: </h2>
+                <p class="computerScore">-</p>
+            </div>
+
+            <div class="winner-container">
+                <h2>Winner(best of 5): </h2>
+                <p class="winner">-</p>
+            </div>
+
+            <div id="restart-btn">
+
+            </div>
+            
         </div>
 
     </div>
