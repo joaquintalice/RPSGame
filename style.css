@@ -94,46 +94,11 @@ body {
 }
 
 /* ************************ */
-.result-container {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    border: solid 2px #23d6be;
-    padding: 1;
-    margin-bottom: 1rem;
-    background-color: #1b1b1b79;
-}
-/* ************************ */
-
-
-/* ************************ */
-.player-score-container {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    border: solid 2px #23d6be;
-    padding: 1;
-    margin-bottom: 1rem;
-    background-color: #1b1b1b79;
-}
-/* ************************ */
-
-
-/* ************************ */
-.computer-score-container {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    border: solid 2px #23d6be;
-    padding: 1;
-    margin-bottom: 1rem;
-    background-color: #1b1b1b79;
-}
-/* ************************ */
-
-
-/* ************************ */
-.winner-container {
+.result-container, 
+.player-score-container, 
+.computer-score-container, 
+.winner-container,
+.selections-container {
     display: flex;
     justify-content: center;
     gap: 2rem;
