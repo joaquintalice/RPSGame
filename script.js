@@ -1,9 +1,3 @@
-// Make a function to return rock paper or scissors called "getComputerChoice"
-// The function going to randomly return rock paper or scissor
-// And another one to "getPlayerChoice" and need recieve two parameters
-// "playerSelection" and "computerSelection" and will return a string that declares the winner of the round
-// And the playerSelection must be case-insensitive.
-
 // Logic info
 /*
 Rock beat scissors and loses to paper.
@@ -12,6 +6,9 @@ Paper beats rock, but loses to scissors.
 */
 
 // HTML connections
+const btn_rock = document.querySelector(".btn_rock"); 
+const btn_paper = document.querySelector(".btn_paper"); 
+const btn_scissor = document.querySelector(".btn_scissor"); 
 const result = document.querySelector(".result");
 const playerScore = document.querySelector(".playerScore");
 const computerScore = document.querySelector(".computerScore");
@@ -22,9 +19,9 @@ const img_right = document.querySelector(".img_right");
 let playerSelection;
 let computerSelection;
 
-const btn_container = document.querySelector(".button-container");
-btn_container.addEventListener('click', function (e) {
-    playerSelection = e.target.textContent;
+const btn_container = document.querySelector(".button-container"); //select btn div
+btn_container.addEventListener('click', function (e) { //give me which btn was clicked 
+    playerSelection = e.target.textContent;  //& put in playerSelection
     result.textContent = "";
 
     addAnim();
@@ -74,7 +71,6 @@ let scoreP = 0; // collect the score of the player
 
 function gameFunction(playerSelection, computerSelection) {
 
-    // rock tie rock - paper tie paper - scissor tie scissor    
     if (playerSelection === computerSelection) {
         result.textContent = "It's a tie!";
 
