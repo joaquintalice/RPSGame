@@ -48,101 +48,49 @@ function getComputerChoice() {
 let scoreC = [];
 let scoreP = [];
 
-//  *******************************rock***************************************
-function rock() {
+
+
+function gameFunction() {
 
     let defaultBtn1 = "Rock";
-
-    // rock tie rock
-    if (defaultBtn1 === "Rock" && getComputerChoice() === info[0].name) {
-        result.textContent = "We have a draw!";
-        scoreC.push(0);
-        scoreP.push(0);
-
-        // rock beat scissors
-    } else if (defaultBtn1 === "Rock" && getComputerChoice() === info[2].name) {
-        result.textContent = "You win! Congratulations";
-        scoreP.push(1);
-        scoreC.push(0);
-
-        // rock loses to paper
-    } else if (defaultBtn1 === "Rock" && getComputerChoice() === info[1].name) {
-        result.textContent = "Computer's win!";
-        scoreC.push(1);
-        scoreP.push(0);
-    }
-    computerScore.textContent = scoreC.join(", ");
-    playerScore.textContent = scoreP.join(", ");
-    winnerOfRps();
-}
-
-btn1.addEventListener("click", rock);
-//  *******************************rock***************************************
-
-
-//  *******************************paper***************************************
-function paper() {
     let defaultBtn2 = "Paper";
-
-    if (defaultBtn2 === "Paper" && getComputerChoice() === info[1].name) {
-        result.textContent = "We have a draw!";
-        scoreC.push(0);
-        scoreP.push(0);
-
-        // paper beat rock
-    } else if (defaultBtn2 === "Paper" && getComputerChoice() === info[0].name) {
-        result.textContent = "You win! Congratulations";
-        scoreP.push(1);
-        scoreC.push(0);
-
-        // paper loses to scissor
-    } else if (defaultBtn2 === "Paper" && getComputerChoice() === info[2].name) {
-        result.textContent = "Computer's win!";
-        scoreC.push(1);
-        scoreP.push(0);
-    }
-    computerScore.textContent = scoreC.join(", ");
-    playerScore.textContent = scoreP.join(", ");
-    winnerOfRps();
-}
-
-btn2.addEventListener("click", paper);
-//  *******************************paper***************************************
-
-
-
-//  *******************************scissor***************************************
-function scissor() {
     let defaultBtn3 = "Scissor";
 
+    // rock tie rock - paper tie paper - scissor tie scissor    
+    if (defaultBtn1 === "Rock" && getComputerChoice() === info[0].name ||
+        defaultBtn1 === "Paper" && getComputerChoice() === info[1].name ||
+        defaultBtn1 === "Scissor" && getComputerChoice() === info[2].name) {
 
-
-    if (defaultBtn3 === "Scissor" && getComputerChoice() === info[2].name) {
-        result.textContent = "We have a draw!";
+        result.textContent = "Draw! - Both scores: +0";
         scoreC.push(0);
         scoreP.push(0);
 
-        // scissor beat paper
-    } else if (defaultBtn3 === "Scissor" && getComputerChoice() === info[1].name) {
-        result.textContent = "You win! Congratulations";
+    }   else if (defaultBtn1 === "Rock" && getComputerChoice() === info[2].name || 
+        defaultBtn2 === "Paper" && getComputerChoice() === info[0].name || 
+        defaultBtn3 === "Scissor" && getComputerChoice() === info[1].name) {
+
+        result.textContent = "You win! - Your score: +1 ";
         scoreP.push(1);
         scoreC.push(0);
 
-        // scissor loses to rock
-    } else if (defaultBtn3 === "Scissor" && getComputerChoice() === info[0].name) {
-        result.textContent = "Computer's win!";
+
+    } else if (defaultBtn1 === "Rock" && getComputerChoice() === info[1].name || 
+        defaultBtn2 === "Paper" && getComputerChoice() === info[2].name || 
+        defaultBtn3 === "Scissor" && getComputerChoice() === info[0].name) {
+
+        result.textContent = "Computer's win! - Your score: +0";
         scoreC.push(1);
         scoreP.push(0);
     }
-    computerScore.textContent = scoreC.join(", ");
-    playerScore.textContent = scoreP.join(", ");
+
+    computerScore.textContent = scoreC.join(" - ");
+    playerScore.textContent = scoreP.join(" - ");
     winnerOfRps();
+
 }
-
-btn3.addEventListener("click", scissor);
-//  *******************************scissor***************************************
-
-
+btn1.addEventListener("click", gameFunction);
+btn2.addEventListener("click", gameFunction);
+btn3.addEventListener("click", gameFunction);
 
 
 
@@ -159,7 +107,7 @@ function winnerOfRps() {
         document.getElementById("restart-btn").appendChild(restart);
         restart.classList.add("restart-button");
         restart.classList.add("float");
-        
+
         btn1.disabled = true;
         btn2.disabled = true;
         btn3.disabled = true;
