@@ -55,9 +55,6 @@ body {
     margin-bottom: 4rem;
 }
 
-.btn1 {
-    background-image: url("assets/rock__1_-removebg-preview.png");
-}
 
 .btn1, .btn2, .btn3 {
     width: 22rem;
@@ -68,6 +65,10 @@ body {
     border-radius: 15rem;
     border-color: #23d6be;
     background-color: #1b1b1b79;
+}
+
+.btn1 {
+    background-image: url("assets/rock__1_-removebg-preview.png");
 }
 
 .btn2 {
@@ -177,13 +178,12 @@ body {
 
 /*********************MEDIA QUERIES*********************/
 
-@media screen and (max-width: 1800px) {
 
+@media screen and (max-width: 1800px) {
+    
     #main h2 {
         position: relative;
         left: 0%;
-        color: white;
-        font-family: 'Courier New', Courier, monospace;
     }
 }
 
@@ -191,61 +191,28 @@ body {
     #main h2 {
         position: relative;
         left: 0%;
-        color: white;
         font-size: 19px;
         margin: 18px 0px;
-        font-family: 'Courier New', Courier, monospace;
     }
 
     #main p{
         font-size: 18px;
-        font-weight: 700;
-        color: white;
-        font-family: 'Courier New', Courier, monospace;
     }
 
 
     .btn1, .btn2, .btn3 {
-        background-image: url("assets/rock__1_-removebg-preview.png");
         width: 17rem;
         height: 17rem;
         background-size: 11rem;
-        background-position: center;
-        background-repeat: no-repeat;
-        border-radius: 15rem;
-        border-color: #23d6be;
-        background-color: #1b1b1b79;
-    }
-    
-    .btn2 {
-        background-image: url("assets/paper__1_-removebg-preview.png");
-    }
-    
-    .btn3 {
-        background-image: url("assets/scissor_1_-removebg-preview.png");
     }
 
     .header {
-        display: flex;
-        color: white;
-        font-family: 'Courier New', Courier, monospace;
-        margin: 0px;
-        justify-content: space-between;
-        background-color: #1b1b1b79;
-        border-bottom: solid 2px #23d6be;
         font-size: 9px;
     }
     
-    .header span {
-        color: #23d6be;
-    }
-    
     .title, .logo {
-        margin: 0;
         padding: 10px;
         gap: 10px;
-        display: flex;
-        align-items: center;
     }
     
     .github-logo {
@@ -268,64 +235,19 @@ body {
 
     #main p{
         font-size: 16px;
-        font-weight: 700;
-        color: white;
-        font-family: 'Courier New', Courier, monospace;
     }
 
 
     .btn1, .btn2, .btn3 {
-        background-image: url("assets/rock__1_-removebg-preview.png");
         width: 12rem;
         height: 12rem;
         background-size: 7rem;
-        background-position: center;
-        background-repeat: no-repeat;
-        border-radius: 15rem;
-        border-color: #23d6be;
-        background-color: #1b1b1b79;
-    }
-    
-    .btn2 {
-        background-image: url("assets/paper__1_-removebg-preview.png");
-    }
-    
-    .btn3 {
-        background-image: url("assets/scissor_1_-removebg-preview.png");
-    }
-
-    .header {
-        display: flex;
-        color: white;
-        font-family: 'Courier New', Courier, monospace;
-        margin: 0px;
-        justify-content: space-between;
-        background-color: #1b1b1b79;
-        border-bottom: solid 2px #23d6be;
-        font-size: 9px;
-    }
-    
-    .header span {
-        color: #23d6be;
-    }
-    
-    .title, .logo {
-        margin: 0;
-        padding: 10px;
-        gap: 10px;
-        display: flex;
-        align-items: center;
-    }
-    
-    .github-logo {
-        width: 25px;
     }
 
 }
 
 
 @media screen and (max-width: 567px ) {
-
     #main h2 {
         position: relative;
         left: 0%;
@@ -337,75 +259,21 @@ body {
 
     #main p{
         font-size: 11px;
-        font-weight: 700;
-        color: white;
-        font-family: 'Courier New', Courier, monospace;
     }
 
     .btn1, .btn2, .btn3 {
-        background-image: url("assets/rock__1_-removebg-preview.png");
         width: 7rem;
         height: 7rem;
         background-size: 5rem;
-        background-position: center;
-        background-repeat: no-repeat;
-        border-radius: 15rem;
-        border-color: #23d6be;
-        background-color: #1b1b1b79;
-    }
-    
-    .btn2 {
-        background-image: url("assets/paper__1_-removebg-preview.png");
-    }
-    
-    .btn3 {
-        background-image: url("assets/scissor_1_-removebg-preview.png");
     }
 
     .header {
-        display: flex;
-        color: white;
-        font-family: 'Courier New', Courier, monospace;
-        margin: 0px;
-        justify-content: space-between;
-        background-color: #1b1b1b79;
-        border-bottom: solid 2px #23d6be;
         font-size: 6px;
-    }
-    
-    .header span {
-        color: #23d6be;
-    }
-    
-    .title, .logo {
-        margin: 0;
-        padding: 10px;
-        gap: 10px;
-        display: flex;
-        align-items: center;
-    }
-    
-    .github-logo {
-        width: 25px;
     }
 
     .restart-button {
-        background-color: #1b1b1b79;
-        border: 2px solid #23d6be;
-        border-radius: 30px;
-        box-shadow: #2c1e08 4px 4px 0 0;
-        color: white;
-        cursor: pointer;
-        display: inline-block;
-        font-weight: 600;
         font-size: 17px;
         padding: 2px 23px;
-        line-height: 50px;
-        text-align: center;
-        text-decoration: none;
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
     }
 }
 
@@ -423,75 +291,25 @@ body {
 
     #main p{
         font-size: 11px;
-        font-weight: 700;
-        color: white;
-        font-family: 'Courier New', Courier, monospace;
     }
 
     .btn1, .btn2, .btn3 {
-        background-image: url("assets/rock__1_-removebg-preview.png");
         width: 6rem;
         height: 6rem;
         background-size: 5rem;
-        background-position: center;
-        background-repeat: no-repeat;
-        border-radius: 15rem;
-        border-color: #23d6be;
-        background-color: #1b1b1b79;
-    }
-    
-    .btn2 {
-        background-image: url("assets/paper__1_-removebg-preview.png");
-    }
-    
-    .btn3 {
-        background-image: url("assets/scissor_1_-removebg-preview.png");
     }
 
     .header {
-        display: flex;
-        color: white;
-        font-family: 'Courier New', Courier, monospace;
-        margin: 0px;
-        justify-content: space-between;
-        background-color: #1b1b1b79;
-        border-bottom: solid 2px #23d6be;
         font-size: 5px;
     }
     
-    .header span {
-        color: #23d6be;
-    }
-    
     .title, .logo {
-        margin: 0;
         padding: 2px 0px;
-        align-items: center;
-        gap: 10px;
-        display: flex;
-    }
-    
-    .github-logo {
-        width: 25px;
     }
 
     .restart-button {
-        background-color: #1b1b1b79;
-        border: 2px solid #23d6be;
-        border-radius: 30px;
-        box-shadow: #2c1e08 4px 4px 0 0;
-        color: white;
-        cursor: pointer;
-        display: inline-block;
-        font-weight: 600;
         font-size: 14px;
         padding: 2px 23px;
-        line-height: 50px;
-        text-align: center;
-        text-decoration: none;
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
     }
 
 }
