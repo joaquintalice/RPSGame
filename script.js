@@ -12,135 +12,142 @@ Paper beats rock, but loses to scissors.
 */
 
 // HTML connections
-const btn1 = document.querySelector(".btn1"); // rock
-const btn2 = document.querySelector(".btn2"); // paper
-const btn3 = document.querySelector(".btn3"); // scissor
+const btn_rock = document.querySelector(".btn_rock"); // rock
+const btn_paper = document.querySelector(".btn_paper"); // paper
+const btn_scissor = document.querySelector(".btn_scissor"); // scissor
 const result = document.querySelector(".result");
 const playerScore = document.querySelector(".playerScore");
 const computerScore = document.querySelector(".computerScore");
-const winner = document.querySelector(".winner");
+const img_left = document.querySelector(".img_left");
+const img_right = document.querySelector(".img_right");
 
 
+let playerSelection;
+let computerSelection;
 
+const btn_container = document.querySelector(".button-container");
+btn_container.addEventListener('click', function (e) {
+    playerSelection = e.target.textContent;
+    result.textContent = "";
 
-let info = [
-    { name: "Rock", id: 1 },
-    { name: "Paper", id: 2 },
-    { name: "Scissor", id: 3 },
-];
-
-
-
-function getComputerChoice() {
-
-    // Generate random number between 1 and 3
-    let randomNumber = Math.floor(Math.random() * 3) + 1;
-
-    for (let i = 0; i < info.length; i++) {
-        if (info[i].id === randomNumber) {
-            return info[i].name;
-        }
+    addAnim();
+    computerSelection = (getCompSelection());
+    img_left.onanimationend = function () {
+        showHands(playerSelection, computerSelection);
+        removeAnim();
+        gameFunction(playerSelection, computerSelection);
     }
+    resetHands();
+});
 
+function addAnim() { //adds class .anim to imgs
+    img_left.classList.add('anim');
+    img_right.classList.add('anim');
+}
+
+function removeAnim() { //removes class .anim from imgs
+    img_left.classList.remove('anim');
+    img_right.classList.remove('anim');
+}
+
+function getCompSelection() {
+    let randomNo = Math.floor(Math.random() * 3);
+    if (randomNo === 1) {
+        return "Rock";
+    } else if (randomNo === 2) {
+        return "Paper";
+    } else {
+        return "Scissor";
+    }
+}
+
+function showHands(playerSelection, computerSelection) { //shows hands with selection
+    img_left.setAttribute('src', `assets/${playerSelection}L.png`);
+    img_right.setAttribute('src', `assets/${computerSelection}R.png`);
+}
+
+function resetHands() { //reset imgs back to rock for next round
+    img_left.setAttribute('src', "assets/RockL.png");
+    img_right.setAttribute('src', "assets/RockR.png");
 }
 
 
-let scoreC = [];
-let scoreP = [];
+let scoreC = 0; // collect the score of the computer
+let scoreP = 0; // collect the score of the player
 
-
-
-function gameFunction() {
-
-    let defaultBtn1 = "Rock";
-    let defaultBtn2 = "Paper";
-    let defaultBtn3 = "Scissor";
+function gameFunction(playerSelection, computerSelection) {
 
     // rock tie rock - paper tie paper - scissor tie scissor    
-    if (defaultBtn1 === "Rock" && getComputerChoice() === info[0].name ||
-        defaultBtn1 === "Paper" && getComputerChoice() === info[1].name ||
-        defaultBtn1 === "Scissor" && getComputerChoice() === info[2].name) {
+    if (playerSelection === computerSelection) {
+        result.textContent = "It's a tie!";
 
-        result.textContent = "Draw! - Both scores: +0";
-        scoreC.push(0);
-        scoreP.push(0);
+    } else if ((playerSelection === "Rock" && computerSelection === "Scissor") ||
+        playerSelection === "Paper" && computerSelection === "Rock" ||
+        playerSelection === "Scissor" && computerSelection === "Paper") {
 
-    }   else if (defaultBtn1 === "Rock" && getComputerChoice() === info[2].name || 
-        defaultBtn2 === "Paper" && getComputerChoice() === info[0].name || 
-        defaultBtn3 === "Scissor" && getComputerChoice() === info[1].name) {
-
-        result.textContent = "You win! - Your score: +1 ";
-        scoreP.push(1);
-        scoreC.push(0);
+        result.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
+        scoreP++;
 
 
-    } else if (defaultBtn1 === "Rock" && getComputerChoice() === info[1].name || 
-        defaultBtn2 === "Paper" && getComputerChoice() === info[2].name || 
-        defaultBtn3 === "Scissor" && getComputerChoice() === info[0].name) {
 
-        result.textContent = "Computer's win! - Your score: +0";
-        scoreC.push(1);
-        scoreP.push(0);
+    } else if (playerSelection === "Rock" && computerSelection === "Paper" ||
+        playerSelection === "Paper" && computerSelection === "Scissor" ||
+        playerSelection === "Scissor" && computerSelection === "Rock") {
+
+        result.textContent = `Computer's win! ${computerSelection} beats ${playerSelection}`;
+        scoreC++;
     }
 
-    computerScore.textContent = scoreC.join(" - ");
-    playerScore.textContent = scoreP.join(" - ");
-    winnerOfRps();
-
-}
-btn1.addEventListener("click", gameFunction);
-btn2.addEventListener("click", gameFunction);
-btn3.addEventListener("click", gameFunction);
+    computerScore.textContent = scoreC;
+    playerScore.textContent = scoreP;
 
 
-
-function winnerOfRps() {
-
-    let sumaC = 0;
-    let sumaP = 0;
-
-
-    if (scoreP.length === 5) {
-
-        let restart = document.createElement("button");
-        restart.textContent = "Play again!";
-        document.getElementById("restart-btn").appendChild(restart);
-        restart.classList.add("restart-button");
-        restart.classList.add("float");
-
-        btn1.disabled = true;
-        btn2.disabled = true;
-        btn3.disabled = true;
-
-        for (let i = 0; i < 5; i++) {
-            sumaC = sumaC + scoreC[i];
-            sumaP = sumaP + scoreP[i];
-        }
-
-        if (sumaC === sumaP) {
-            winner.textContent = `We have a draw, with ${sumaC}-${sumaP} points`;
-        } else if (sumaC > sumaP) {
-            winner.textContent = `Computer win the game, with ${sumaC} points`;
-        } else if (sumaP > sumaC) {
-            winner.textContent = `You win the game, with ${sumaP} points`;
-        }
-
-        restart.onclick = () => {
-            scoreP.length = 0;
-            scoreC.length = 0;
-            computerScore.textContent = "-";
-            playerScore.textContent = "-";
-            result.textContent = "Good luck!";
-            winner.textContent = "-";
-            btn1.disabled = false;
-            btn2.disabled = false;
-            btn3.disabled = false;
-            restart.remove();
-        }
-
+    if (scoreP === 5 || scoreC === 5) {
+        declareWinner();
     }
 
 }
+
+btn_rock.addEventListener("click", gameFunction);
+btn_paper.addEventListener("click", gameFunction);
+btn_scissor.addEventListener("click", gameFunction);
+
+
+
+function declareWinner() {
+
+    let restart = document.createElement("button");
+    restart.textContent = "Play again!";
+    document.getElementById("restart-btn").appendChild(restart);
+    restart.classList.add("restart-button");
+    restart.classList.add("float");
+
+    btn_rock.disabled = true;
+    btn_paper.disabled = true;
+    btn_scissor.disabled = true;
+
+    if (scoreP === scoreC) {
+        result.textContent = `We have a draw, with ${scoreC}-${scoreP} points.`;
+    } else if (scoreC > scoreP) {
+        result.textContent = `Computer win the game with ${scoreC} points.`;
+    } else if (scoreP > scoreC) {
+        result.textContent = `You win the game with ${scoreP} points!`;
+    }
+
+    restart.onclick = () => {
+        scoreP = 0;
+        scoreC = 0;
+        computerScore.textContent = "-";
+        playerScore.textContent = "-";
+        result.textContent = "Click a button to play - First to 5 points wins!";
+        btn_rock.disabled = false;
+        btn_paper.disabled = false;
+        btn_scissor.disabled = false;
+        restart.remove();
+    }
+
+}
+
 
 
 
