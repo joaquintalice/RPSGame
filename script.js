@@ -12,9 +12,6 @@ Paper beats rock, but loses to scissors.
 */
 
 // HTML connections
-const btn_rock = document.querySelector(".btn_rock"); // rock
-const btn_paper = document.querySelector(".btn_paper"); // paper
-const btn_scissor = document.querySelector(".btn_scissor"); // scissor
 const result = document.querySelector(".result");
 const playerScore = document.querySelector(".playerScore");
 const computerScore = document.querySelector(".computerScore");
@@ -107,10 +104,6 @@ function gameFunction(playerSelection, computerSelection) {
     }
 
 }
-
-btn_rock.addEventListener("click", gameFunction);
-btn_paper.addEventListener("click", gameFunction);
-btn_scissor.addEventListener("click", gameFunction);
 
 
 
