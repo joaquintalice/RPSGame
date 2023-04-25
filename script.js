@@ -8,7 +8,7 @@ Paper beats rock, but loses to scissors.
 // HTML connections
 const btn_rock = document.querySelector(".btn_rock"); 
 const btn_paper = document.querySelector(".btn_paper"); 
-const btn_scissor = document.querySelector(".btn_scissor"); 
+const btn_scissors = document.querySelector(".btn_scissors"); 
 const result = document.querySelector(".result");
 const playerScore = document.querySelector(".playerScore");
 const computerScore = document.querySelector(".computerScore");
@@ -51,7 +51,7 @@ function getCompSelection() {
     } else if (randomNo === 2) {
         return "Paper";
     } else {
-        return "Scissor";
+        return "Scissors";
     }
 }
 
@@ -74,9 +74,9 @@ function gameFunction(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         result.textContent = "It's a tie!";
 
-    } else if ((playerSelection === "Rock" && computerSelection === "Scissor") ||
+    } else if ((playerSelection === "Rock" && computerSelection === "Scissors") ||
         playerSelection === "Paper" && computerSelection === "Rock" ||
-        playerSelection === "Scissor" && computerSelection === "Paper") {
+        playerSelection === "Scissors" && computerSelection === "Paper") {
 
         result.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
         scoreP++;
@@ -84,8 +84,8 @@ function gameFunction(playerSelection, computerSelection) {
 
 
     } else if (playerSelection === "Rock" && computerSelection === "Paper" ||
-        playerSelection === "Paper" && computerSelection === "Scissor" ||
-        playerSelection === "Scissor" && computerSelection === "Rock") {
+        playerSelection === "Paper" && computerSelection === "Scissors" ||
+        playerSelection === "Scissors" && computerSelection === "Rock") {
 
         result.textContent = `Computer's win! ${computerSelection} beats ${playerSelection}`;
         scoreC++;
@@ -113,7 +113,7 @@ function declareWinner() {
 
     btn_rock.disabled = true;
     btn_paper.disabled = true;
-    btn_scissor.disabled = true;
+    btn_scissors.disabled = true;
 
     if (scoreP === scoreC) {
         result.textContent = `We have a draw, with ${scoreC}-${scoreP} points.`;
@@ -131,7 +131,7 @@ function declareWinner() {
         result.textContent = "Click a button to play - First to 5 points wins!";
         btn_rock.disabled = false;
         btn_paper.disabled = false;
-        btn_scissor.disabled = false;
+        btn_scissors.disabled = false;
         restart.remove();
     }
 
