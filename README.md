@@ -53,8 +53,6 @@ HTML
 
 CSS
 
-DOM manipulation
-
 
 ## How to Run the Project
 To run the project, you can simply clone the repository to your local machine and open the HTML files in a web browser. 
