@@ -6,9 +6,9 @@ Paper beats rock, but loses to scissors.
 */
 
 // HTML connections
-const btn_rock = document.querySelector(".btn_rock"); 
-const btn_paper = document.querySelector(".btn_paper"); 
-const btn_scissors = document.querySelector(".btn_scissors"); 
+const btn_rock = document.querySelector(".btn_rock");
+const btn_paper = document.querySelector(".btn_paper");
+const btn_scissors = document.querySelector(".btn_scissors");
 const result = document.querySelector(".result");
 const playerScore = document.querySelector(".playerScore");
 const computerScore = document.querySelector(".computerScore");
@@ -22,7 +22,7 @@ let computerSelection;
 const btn_container = document.querySelector(".button-container"); //select btn div
 btn_container.addEventListener('click', function (e) { //give me which btn was clicked 
     playerSelection = e.target.textContent;  //& put in playerSelection
-    result.textContent = "";
+    result.textContent = "🥁🥁🥁🥁🥁";
 
     addAnim();
     computerSelection = (getCompSelection());
